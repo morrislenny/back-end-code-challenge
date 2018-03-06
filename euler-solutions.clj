@@ -41,3 +41,25 @@
     non-palindromic numbers. It then finds the maximum value of the remaining sequence.
     The result is 996004."
     (apply max (filter is-palindrome? (for [x (range 100 999) y (range 100 999)] (* x y)))))
+
+; Problem 9
+(defn pythagorean-triplet? [vec]
+    (let [a (vec 0)
+          b (vec 1)
+          c (- 1000 a b)]
+          (and (> c 0) (== (+ (* a a) (* b b)) (* c c)))
+    ))
+
+(defn multiply [obj]
+    (let [vec (obj 0)
+          a (vec 0)
+          b (vec 1)
+          c (- 1000 a b)]
+          (* a b c)))
+
+(defn problem-9 []
+    (multiply
+        (filter pythagorean-triplet?
+            (for [x (range 1 (inc 1000))
+                  y (range x (inc 1000))]
+                  [x y]))))
