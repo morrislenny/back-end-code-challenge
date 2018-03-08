@@ -63,7 +63,7 @@
           (* a b c)))
 
 (defn problem-9 []
-    (multiply
+    (apply multiply
         (filter pythagorean-triplet?
             (for [x (range 1 (inc 1000))
                   y (range x (inc 1000))]
