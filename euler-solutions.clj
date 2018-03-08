@@ -19,15 +19,15 @@
 ;1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 ;By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 (defn fib
-    "Helper function for (problem-2). Creates a lazy sequence of fibonacci numbers."
-    ([] (fib 1 1))
-    ([a b]
-        (lazy-seq (cons a (fib b (+ a b))))))
+  "Helper function for (problem-2). Creates a lazy sequence of fibonacci numbers."
+  ([] (fib 1 1))
+  ([a b]
+    (lazy-seq (cons a (fib b (+ a b))))))
 
 (defn problem-2 []
-    "Solution to problem-2. Takes fibonacci numbers that are less than four million,
-    and sums the even ones."
-    (reduce + (filter even? (take-while #(<= % 4000000) (fib)))))
+  "Solution to problem-2. Takes fibonacci numbers that are less than four million,
+  and sums the even ones."
+  (reduce + (filter even? (take-while #(<= % 4000000) (fib)))))
 
 ; Problem 4
 ;A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
