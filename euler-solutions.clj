@@ -33,12 +33,13 @@
 ;Find the largest palindrome made from the product of two 3-digit numbers.
 ;(require '[clojure.string :as str])
 (defn is-palindrome? [n]
-    (= (str n) (str/reverse (str n))) n)
-(defn problem-4 []
+    (= (str n) (str/reverse (str n))))
+(defn problem-4
     "Solution to problem-4. This function needs clojure.string as formatted in the comment above.
     It finds every combination of three digit integers multiplied together, and filters out the
     non-palindromic numbers. It then finds the maximum value of the remaining sequence.
-    The result is 996004."
+    The result is 906609."
+    []
     (apply max (filter is-palindrome? (for [x (range 100 999) y (range 100 999)] (* x y)))))
 
 ; Problem 9
