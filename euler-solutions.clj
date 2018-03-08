@@ -27,7 +27,7 @@
 
 (defn problem-2 []
   "Solution to problem-2. Takes fibonacci numbers that are less than four million,
-  and sums the even ones."
+  and sums the even ones.The result is 4613732."
   (reduce + (filter even? (take-while #(<= % 4000000) (fib)))))
 
 ; Problem 4
