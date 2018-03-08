@@ -55,22 +55,29 @@
 ;For example, 32 + 42 = 9 + 16 = 25 = 52.
 ;There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 ;Find the product abc.
-(defn pythagorean-triplet? [v]
-    (let [a (v 0)
-          b (v 1)
-          c (- 1000 a b)]
-          (and (> c 0) (== (+ (* a a) (* b b)) (* c c)))
-    ))
+(defn pythagorean-triplet?
+  "takes in a vector with a and b, it then computes c based on the constraint
+  of the problem, and checks if a, b, and c are a phythagorean triplet."
+  [v]
+  (let [a (v 0)
+        b (v 1)
+        c (- 1000 a b)]
+    (and (> c 0) (== (+ (* a a) (* b b)) (* c c)))))
 
-(defn multiply [s]
-    (let [a (s 0)
-          b (s 1)
-          c (- 1000 a b)]
-          (* a b c)))
+(defn multiply
+  "Takes a, and b from a vector v, computes c based on the constraint of the
+  problem, and then multip a, b, and c together."
+  [v]
+  (let [a (v 0)
+        b (v 1)
+        c (- 1000 a b)]
+        (* a b c)))
 
-(defn problem-9 []
-    (apply multiply
-        (filter pythagorean-triplet?
-            (for [x (range 1 (inc 1000))
-                  y (range x (inc 1000))]
-                  [x y]))))
+(defn problem-9
+  "Solution to problem 9. The answer is 31875000."
+  []
+  (apply multiply
+    (filter pythagorean-triplet?
+      (for [x (range 1 (inc 1000))
+            y (range x (inc 1000))]
+        [x y]))))
