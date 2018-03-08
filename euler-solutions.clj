@@ -5,13 +5,12 @@
     "Helper function to (problem-1). Takes a number,
     and returns it if the number is a multiple of 3 or 5, or returns false if it is not."
     [n]
-    (if (or (== (mod n 3) 0) (== (mod n 5) 0))
-        n
-        false))
-(defn problem-1 []
+    (or (== (mod n 3) 0) (== (mod n 5) 0)))
+(defn problem-1
     "Solution to problem-1. Generates a range of integers from 0 to 1000,
     filters out numbers that are not multiples of 3 or 5, and sums the remaining sequence.
     The result is 233168."
+    []
     (reduce + (filter multiple? (range 0 1000))))
 
 ;Problem 2
