@@ -1,6 +1,6 @@
 (ns back-end-code-challenge.euler-solutions
   (require [clojure.string :as str]))
-  
+
 ;;;; Problem 1
 ;;; If we list all the natural numbers below 10 that are multiples of 3 or 5,
 ;;; we get 3, 5, 6 and 9. The sum of these multiples is 23.
@@ -87,8 +87,7 @@
 (defn problem-9
   "Solution to problem 9. The answer is 31875000."
   []
-  (apply multiply
-    (filter pythagorean-triplet?
-      (for [x (range 1 (inc 1000))
-            y (range x (inc 1000))]
-        [x y]))))
+  (some #(when (pythagorean-triplet? %) (multiply %))
+        (for [x (range 1 1001)
+              y (range x 1001)]
+          [x y])))
