@@ -69,11 +69,11 @@
 ;; (pythagorean-triplet? [1 9])
 (deftest pythagorean-triplet?-1-9
   (testing "1^2 + 9^2 NOT EQUALS 990^2"
-    (pythagorean-triplet? [1 9])))
+    (is (not (pythagorean-triplet? [1 9])))))
 ;; (pythagorean-triplet? [200 375])
 (deftest pythagorean-triplet?-200-375
   (testing "200^2 + 375^2 EQUALS (1000-200-375)^2"
-    (pythagorean-triplet? [200 375])))
+    (is (pythagorean-triplet? [200 375]))))
 
 ;;; (problem-9) Test
 (deftest problem-9-test
